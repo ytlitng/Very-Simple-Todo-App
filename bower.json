@@ -1,0 +1,17 @@
+{
+  "name": "bower.json",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Chris Loucks <cloucks09@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/ytlitng/San-Diego-Top-Spots-Angular",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

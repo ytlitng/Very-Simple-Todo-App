@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="app">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+
+<body ng-controller="HomeController as vm">
+    <<div class="container-fluid">
+      <div class="jumbotron jumbotron-fluid">
+        <h1>Very Simple Todo APP</h1>
+        <hr>
+        <div class="row-fluid">
+            <div class="span4 col-md-4">
+                <p>Add todo Item : <input type="text" ng-model="vm.item"></p>
+
+
+                <select ng-model="vm.priority">
+<option value="1">High</option>
+<option value="2">Medium</option>
+<option value="3">Low</option>
+                 </select>
+                <button ng-click="vm.newItem()">add</button>
+            </div>
+            <div class="span4 col-md-8">
+                <!-- Button -->
+                <button id="priorityButton" name="singlebutton" class="btn btn-primary" ng-click="sortPriority ='priority'">order high-low</button>
+                <!-- Button -->
+                <button id="priorityButton" name="singlebutton" class="btn btn-primary" ng-click="sortPriority = '-priority'">order low-high</button>
+                <!-- Button -->
+                <button id="priorityButton" name="singlebutton" class="btn btn-primary" ng-click="sortPriority = 'item'">order alphabetically</button>
+
+
+
+                <div>
+                    <table class="table table-bordered ">
+                        <tbody>
+                            <tr>
+
+                            </tr>
+
+                            <tr ng-repeat="value in vm.finalList | orderBy:sortPriority" ng-class="{'bg-info':{{vm.priority}} === 3, 'bg-warning':{{vm.priority}} === 2, 'bg-danger':{{vm.priority}} === 1}">
+                                <td>{{value.item}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+        </table>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
